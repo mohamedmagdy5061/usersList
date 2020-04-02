@@ -7,8 +7,12 @@ import LoginForm from './components/LoginForm'
 import Home from './screens/Home';
 import Profile from './screens/Profile'
 import AddForm from './screens/AddForm'
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import ListScreen from './screens/ListScreen';
+import ColorScreen from './screens/ColorScreen';
+
 const Stack = createStackNavigator();
 
 
@@ -26,7 +30,7 @@ export default function App() {
     <Stack.Navigator>
       <Stack.Screen 
       name="Home" 
-      component={Home} 
+      component={ColorScreen} 
       options={{
         ...ScreenOptions,
         title:'All Users',
@@ -36,6 +40,11 @@ export default function App() {
        options={ScreenOptions}
       />
       <Stack.Screen name="AddForm" component={AddForm} />
+      {/* <Stack.Screen name='ListScreen' component={ListScreen} /> */}
+      <Stack.Screen name="ColorScreen" component={ColorScreen} />
+
+      
+
     </Stack.Navigator>
     </NavigationContainer>
     </Provider>
